@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Pressure">Pressure</string>
+    <string name="Wind">Wind</string>
+    <string name="Cloud">Cloud</string>
+    <string name="UltraViolet">UltraViolet</string>
+    <string name="Visibility">Visibility</string>
+    <string name="Humidity">Humidity</string>
+    <string name="home">Home</string>
+    <string name="Favorites">Favorites</string>
+    <string name="Alerts">Alerts</string>
+    <string name="Setting">Setting</string>
+</resources>
