@@ -1,8 +1,9 @@
-package  com.example.weatherapp.models.responseDataModel
+package  com.example.weather.Model
 
+import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
 
-
+@TypeConverters(My_Converter::class)
 data class Weather (
 
   @SerializedName("id"          ) var id          : Int?    = null,

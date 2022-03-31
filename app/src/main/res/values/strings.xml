@@ -10,4 +10,8 @@
     <string name="Favorites">Favorites</string>
     <string name="Alerts">Alerts</string>
     <string name="Setting">Setting</string>
+    <string name="Location">String</string>
+    <string name="location">location</string>
+    <string name="map">map</string>
+    <string name="next">next</string>
 </resources>

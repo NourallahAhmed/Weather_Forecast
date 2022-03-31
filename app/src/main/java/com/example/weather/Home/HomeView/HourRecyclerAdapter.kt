@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weather.Model.Pojo
 import com.example.weather.R
 
 class HourRecyclerAdapter (context: Context) : RecyclerView.Adapter<HourRecyclerAdapter.HourAdapter> () {

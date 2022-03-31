@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weather.Model.Pojo
 import com.example.weather.R
+import com.example.weather.Model.Daily
 
 class WeekRecyclerAdapter(var context:Context): RecyclerView.Adapter<WeekRecyclerAdapter.WeekAdapter> () {
-    var week : List<Pojo> = listOf()
+    var week : List<Daily> = listOf()
 
     class WeekAdapter(itemView: View) : RecyclerView.ViewHolder(itemView){
         val day: TextView = itemView.findViewById(R.id.DayWeekRowID)
@@ -28,9 +28,9 @@ class WeekRecyclerAdapter(var context:Context): RecyclerView.Adapter<WeekRecycle
 
     override fun onBindViewHolder(holder: WeekAdapter, position: Int) {
 
-        holder.day.text = week[position].day
-        holder.desc.text = week[position].day
-        holder.temp.text=week[position].day
+        holder.day.text = "@2"/*week[position].dt.toString()*/ //UTC to Day
+        holder.desc.text = "21"   //week[position].feelsLike.toString()
+        holder.temp.text= "12" //week[position].temp.toString()
 //        Glide.with(context).load(week[position].image).into(holder.image);
 
 
