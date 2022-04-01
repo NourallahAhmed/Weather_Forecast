@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weather.Model.Hourly
 import com.example.weather.R
 
 class HourRecyclerAdapter (context: Context) : RecyclerView.Adapter<HourRecyclerAdapter.HourAdapter> () {
-//    var week : List<Pojo> = listOf()
+    lateinit var hours : List<Hourly>
 
     class HourAdapter(itemView: View) : RecyclerView.ViewHolder(itemView){
         val hour: TextView = itemView.findViewById(R.id.hour_Id)
@@ -26,12 +27,14 @@ class HourRecyclerAdapter (context: Context) : RecyclerView.Adapter<HourRecycler
 
     override fun onBindViewHolder(holder: HourAdapter, position: Int) {
 
-        holder.hour.text = "12 AM"
-        holder.temp.text="90 C"
+        holder.hour.text = hours.get(position).dt.toString()
+        holder.temp.text=hours.get(position).temp.toString()
+
+        println( "hourAdapter"+ hours.get(position).dt.toString() + hours.get(position).temp.toString())
 //        Glide.with(context).load(week[position].image).into(holder.image);
 
 
     }
 
-    override fun getItemCount(): Int {  return 7    } // as the week only 7 days
+    override fun getItemCount(): Int {  return hours.size   } // as the week only 7 days
 }

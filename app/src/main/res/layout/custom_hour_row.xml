@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+
+    android:background="@drawable/borders"
     >
 
     <TextView
         android:id="@+id/hour_Id"
         android:layout_width="69dp"
         android:layout_height="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:text="5 AM"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,23 +23,23 @@
         android:id="@+id/ImageHour_ID"
         android:layout_width="43dp"
         android:layout_height="57dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hour_Id"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/temp_hour_ID"
-        android:layout_width="66dp"
-        android:layout_height="30dp"
+        android:layout_width="93dp"
+        android:layout_height="64dp"
         android:layout_marginTop="4dp"
         android:text="13 C"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ImageHour_ID"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

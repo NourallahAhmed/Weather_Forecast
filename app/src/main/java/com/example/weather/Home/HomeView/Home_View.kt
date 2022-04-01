@@ -33,6 +33,8 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.navigation.NavigationView
 
 import android.Manifest
+import android.annotation.SuppressLint
+import com.example.weather.Model.Hourly
 
 
 class Home_View : AppCompatActivity() {
@@ -40,6 +42,7 @@ class Home_View : AppCompatActivity() {
     // ______________ xml Component ______________
     var drawerLayout: DrawerLayout? = null
     var navigationView: NavigationView? = null
+
     var location: TextView? = null
     var description: TextView? = null
     var tempreture: TextView? = null
@@ -81,20 +84,10 @@ class Home_View : AppCompatActivity() {
 
         println(" after show setting function $Latitude , $Longitude")
         initComp()
-
-
-
-        sethourRecycler()
-        setWeekRecycler()
-
-
-
-
-
     }
 
-
     //send to view model
+    @SuppressLint("SetTextI18n")
     private fun putRequest() {
         myfactory = HomeViewModelFactory(
             Repo.getInstance(
@@ -120,9 +113,36 @@ class Home_View : AppCompatActivity() {
                 println(" daily  ${data.daily}" )
                 println(" hourly ${data.hourly}" )
                 println(" alerts ${data.alerts}" )
-                println(" timezone ${data.timezone}" )
+                println(" timezone ${data.timezone}")
+
+
+                location?.text=data.timezone
+
+                var weather= data.current?.weather?.get(0)
+                description?.text=weather?.description
+
+                tempreture?.text= data.current?.temp.toString()+"℃"
+
+                humidity?.text=data.current?.humidity.toString()+"%"
+
+                pressure?.text=data.current?.pressure.toString()+"hpa"
+
+                wind?.text=data.current?.windSpeed.toString()+"m/s"
+
+                ultraviolet?.text=data.current?.uvi.toString()+"m"
+
+                cloud?.text=data.current?.clouds.toString()+"%"
+
+                visiblity?.text=data.current?.visibility.toString()
+
+
+                sethourRecycler(data.hourly)
+                setWeekRecycler(data.daily)
+
+
             }
-        }    }
+        }
+    }
 
     private fun showSettingDialog() {
         val dialogBuilder = AlertDialog.Builder(this)
@@ -148,7 +168,6 @@ class Home_View : AppCompatActivity() {
         val alertDialog = dialogBuilder.create()
         alertDialog.show()
     }
-
 
     private fun getUserLocation() {
 
@@ -265,18 +284,20 @@ class Home_View : AppCompatActivity() {
         }
     }
 
-    private fun setWeekRecycler() {
-        var test = listOf<Daily>()
+    private fun setWeekRecycler( daily: List<Daily>) {
+//        var test = listOf<Daily>()
         layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = RecyclerView.VERTICAL
-        weekAdapter.week = test
+        weekAdapter.week = daily
         weekRecycler!!.adapter = weekAdapter
         weekRecycler!!.layoutManager = layoutManager
     }
 
-    private fun sethourRecycler() {
+    private fun sethourRecycler(hourly : List<Hourly>) {
         layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = RecyclerView.HORIZONTAL
+
+        hourAdapter.hours=hourly
         hourRecycler!!.adapter = hourAdapter
         hourRecycler!!.layoutManager = layoutManager
     }
