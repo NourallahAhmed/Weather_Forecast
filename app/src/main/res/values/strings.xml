@@ -9,9 +9,45 @@
     <string name="home">Home</string>
     <string name="Favorites">Favorites</string>
     <string name="Alerts">Alerts</string>
-    <string name="Setting">Setting</string>
+    <string name="Setting">Settings</string>
     <string name="Location">String</string>
     <string name="location">location</string>
     <string name="map">map</string>
     <string name="next">next</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="Language">Language</string>
+    <string name="Gps">gps</string>
+    <string name="English">English</string>
+    <string name="Arabic">Arabic</string>
+    <string name="Temp">Temperature</string>
+    <string name="Cel">Celsius</string>
+    <string name="kelvin">Kelvin</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="WindSpeed">Wind Speed</string>
+    <string name="meterpersec">Meter / Sec</string>
+    <string name="Mileperhour">Mile / Hour</string>
+    <string name="title_activity_navigation_drawer" translatable="false">NavigationDrawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="menu_gallery" translatable="false">Gallery</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="sky">Clear Sky</string>
+    <string name="MyheaderTitle">Home</string>
+    <string name="title_activity_mynavdrawer">mynavdrawer_activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="delete">Delete</string>
+    <string name="Add">Add</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notification_titte">Weather Alert</string>
+    <string name="setAlert">Set new alert</string>
+    <string name="Save">Save</string>
+    <string name="checkinternet">"Please check your internet connection  "</string>
 </resources>

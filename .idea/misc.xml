@@ -10,12 +10,36 @@
         <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/drawable/home_background.xml" value="0.229" />
         <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/drawable/temp_display_home.xml" value="0.2775" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_all_settings.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/custom_day_row.xml" value="1.25" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_main2.xml" value="0.33" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_maps.xml" value="0.25" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_maps2.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_mynavdrawer.xml" value="0.1" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/app_bar_mynavdrawer.xml" value="0.11481481481481481" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/app_bar_navigation_drawer.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/content_mynavdrawer.xml" value="0.1" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/content_navigation_drawer.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/custom_day_row.xml" value="0.33" />
         <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/custom_hour_row.xml" value="1.0" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/customsettingrow.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/dummy.xml" value="0.1" />
-        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/home.xml" value="0.27291666666666664" />
-        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/menu/drawermenu.xml" value="0.2324074074074074" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/fav_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/fav_row.xml" value="0.33" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_alert__view.xml" value="0.33" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_fav_view.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_gallery.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/home.xml" value="0.22362869198312235" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/item_navheader.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/nav_header_mynavdrawer.xml" value="0.1" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/layout/settingpage.xml" value="0.2" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/menu/activity_main_drawer.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/menu/drawermenu.xml" value="0.1" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/menu/mynavdrawer_activity.xml" value="0.1" />
+        <entry key="..\:/Users/Nour Ahmed/AndroidStudioProjects/Weather/app/src/main/res/menu/navigation_drawer.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>

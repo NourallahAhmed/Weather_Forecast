@@ -19,7 +19,9 @@ interface WeatherService {
    suspend fun getDataFromApi(@Query("lat") lat :String,
                        @Query("lon") lon :String,
                        @Query("appid") ap:String,
-                       @Query("unit") unit :String,
-                       @Query("lang") lang :String ): WeatherModel
+                       @Query("units") unit :String,
+                       @Query("lang") lang :String,
+                              @Query("exclude") exclude :String,
+): WeatherModel
 
 }

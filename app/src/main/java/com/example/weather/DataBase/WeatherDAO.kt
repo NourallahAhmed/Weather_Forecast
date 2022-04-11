@@ -6,14 +6,20 @@ import com.example.weather.Model.WeatherModel
 
 @Dao
 interface WeatherDAO {
-    @Query("SELECT * FROM Weather")
-    fun getStoredData(): LiveData<WeatherModel>
+    //WHERE lat = :latitude AND lon= :longitude
+    @Query("SELECT * FROM Weather ")
+    suspend fun getStoredData(): WeatherModel
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertData(weatherModel: WeatherModel)
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertData(weatherModel: WeatherModel)
+    //________________________FAV__________________
 
-
-    //each time i will insert i will delete the previous data
+    //used in fav
     @Delete
     fun deleteData(weatherModel: WeatherModel)
+
+
+    // todo--> insert in Fav table
+    @Insert
+    fun insertintofav(weatherModel: WeatherModel)
 }

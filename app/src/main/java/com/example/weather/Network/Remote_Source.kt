@@ -6,5 +6,5 @@ interface Remote_Source {
     suspend fun getDataFromNetwork(lat : Double ,
                                    lon:Double ,
                                    unit:String ,
-                                   lang :String): WeatherModel
+                                   lang :String , exclude: String): WeatherModel
 }

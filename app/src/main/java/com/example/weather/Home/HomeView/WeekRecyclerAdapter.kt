@@ -10,16 +10,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.weather.Model.Daily
 import com.example.weather.R
-import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-class WeekRecyclerAdapter(var context:Context): RecyclerView.Adapter<WeekRecyclerAdapter.WeekAdapter> () {
-    var week : List<Daily> = listOf()
-
+class WeekRecyclerAdapter(var context: Context, var unit: String?): RecyclerView.Adapter<WeekRecyclerAdapter.WeekAdapter> () {
+    public var week : List<Daily> = listOf()
 
     class WeekAdapter(itemView: View) : RecyclerView.ViewHolder(itemView){
         val day: TextView = itemView.findViewById(R.id.DayWeekRowID)
@@ -37,43 +37,44 @@ class WeekRecyclerAdapter(var context:Context): RecyclerView.Adapter<WeekRecycle
     @SuppressLint("SimpleDateFormat")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: WeekAdapter, position: Int) {
-
-        println(week[position].toString())
         var weatherObj=week[position].weather[0].description
-
         var tempObj = week[position].temp?.day
-        println("temp : " +tempObj)
+//        val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("MMM", Locale.ENGLISH)
 
-        println(week[position].dt.toString())
-        val formatter: DateTimeFormatter =
-            DateTimeFormatter.ofPattern("MMM", Locale.ENGLISH)
+        if(Home_View.LangToAdapter == "en") {
+            var date= Date((week[position].dt!! *1000).toLong())
 
+            val format = SimpleDateFormat("EE", Locale("en"))
+            holder.day.text =format.format(date)//UTC to Day
+        }
+        else{
+            var date= Date((week[position].dt!! *1000).toLong())
+            val format = SimpleDateFormat("EE", Locale("ar"))
+            holder.day.text =format.format(date)//UTC to Day
+        }
 
+        var weather = week[position].weather[0]
 
-//        week[position].dt?.let { getDate(it.toLong()) }
-//        val aDate = "Jul 16, 2013 12:08:59 AM"
-        var date = SimpleDateFormat("EE").format(week[position].dt?.times(
-            1000))
-
-      println( SimpleDateFormat("dd-mm-yyyy",Locale.ENGLISH).format(week[position].dt?.times(
-            1000)))
-        println("data : $date")
-
-
-
-
-        holder.day.text =date//UTC to Day
         holder.desc.text =weatherObj
-        holder.temp.text= week[position].temp?.day.toString()
-//        Glide.with(context).load(week[position].image).into(holder.image);
 
+//        holder.temp.text= week[position].temp?.day.toString()
+        holder.temp.text= week[position].temp?.max.toString()+"/"+week[position].temp?.min.toString() + unit
+
+        var iconurl = "http://openweathermap.org/img/wn/${weather.icon}@2x.png";
+
+        Glide.with(holder.itemView.context).load(iconurl).apply(
+            RequestOptions().override(100, 100).placeholder(R.drawable.ic_launcher_background)
+            ).dontAnimate().into(holder.image)
 
     }
 
     override fun getItemCount(): Int {  return 7    } // as the week only 7 days
 
+//    fun setWeek(update :  List<Daily>){
+//        week=update
+//    }
+//
 
-////
 //    private fun getDate(time: Long): String? {
 //    val format: DateFormat = SimpleDateFormat("MM/dd/YYYY hh:mm:ss a")
 //    val myDate = format.parse(dateAsString)

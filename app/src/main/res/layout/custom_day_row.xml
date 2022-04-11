@@ -2,16 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/borders"
     >
 
     <ImageView
         android:id="@+id/ImageWeekRow_ID"
-        android:layout_width="36dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="37dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/DayWeekRowID"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,23 +19,25 @@
 
     <TextView
         android:id="@+id/DayWeekRowID"
-        android:layout_width="55dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginStart="18dp"
         android:text="Tomorrow"
-        android:textSize="18dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.448" />
 
     <TextView
         android:id="@+id/desc_Week_row_id"
-        android:layout_width="160dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="18dp"
         android:text="Clear Sky"
-        android:textSize="18dp"
+        android:textAlignment="center"
 
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ImageWeekRow_ID"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,16 +45,16 @@
 
     <TextView
         android:id="@+id/tempWeekRow_ID"
-        android:layout_width="73dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="18dp"
         android:text="TextView"
-        android:textSize="18dp"
-
+        android:textAlignment="gravity"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toEndOf="@+id/desc_Week_row_id"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintVertical_bias="0.444" />
 </androidx.constraintlayout.widget.ConstraintLayout>

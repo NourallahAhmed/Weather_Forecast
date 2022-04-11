@@ -7,10 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.weather.Model.Hourly
 import com.example.weather.R
+import java.text.SimpleDateFormat
+import java.util.*
 
-class HourRecyclerAdapter (context: Context) : RecyclerView.Adapter<HourRecyclerAdapter.HourAdapter> () {
+class HourRecyclerAdapter (var context: Context) : RecyclerView.Adapter<HourRecyclerAdapter.HourAdapter> () {
     lateinit var hours : List<Hourly>
 
     class HourAdapter(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -27,14 +31,31 @@ class HourRecyclerAdapter (context: Context) : RecyclerView.Adapter<HourRecycler
 
     override fun onBindViewHolder(holder: HourAdapter, position: Int) {
 
-        holder.hour.text = hours.get(position).dt.toString()
+        if(Home_View.LangToAdapter.equals("ar")) {
+            var date = SimpleDateFormat("hh:mm a", Locale("ar")).format(hours[position].dt?.times(1000))
+            holder.hour.text = date
+
+            /*
+            *
+            *  var date= Date((week[position].dt!! *1000).toLong())
+            *  val format = SimpleDateFormat("EE", Locale("en"))
+            *  holder.day.text =format.format(date)//UTC to Day
+            * */
+        }
+        else{
+            var date = SimpleDateFormat("h:mm a", Locale("en")).format(hours[position].dt?.times(1000))
+            holder.hour.text = date
+
+        }
+
         holder.temp.text=hours.get(position).temp.toString()
 
-        println( "hourAdapter"+ hours.get(position).dt.toString() + hours.get(position).temp.toString())
-//        Glide.with(context).load(week[position].image).into(holder.image);
+        var weather = hours[position].weather[0]
 
-
+        Glide.with(context).load("http://openweathermap.org/img/wn/${weather.icon}@2x.png").apply(
+            RequestOptions().override(100, 100).error(R.drawable.ic_launcher_foreground)
+        ).into(holder.image)
     }
 
-    override fun getItemCount(): Int {  return hours.size   } // as the week only 7 days
+    override fun getItemCount(): Int {  return hours.size   }
 }

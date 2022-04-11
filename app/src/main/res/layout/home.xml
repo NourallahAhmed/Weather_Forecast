@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/home_background"
     tools:context=".Home.HomeView.Home_View"
-    android:id="@+id/mydrawablebar"
-    >
+    android:id="@+id/drawerLayout">
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/mynavigationbar"
+        android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/drawermenu">
-    </com.google.android.material.navigation.NavigationView>
-
-
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_mynavdrawer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/activity_main_drawer" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="16dp"
@@ -42,7 +44,7 @@
                 android:layout_height="199dp"
                 android:layout_marginTop="28dp"
                 android:background="@drawable/borders"
-                android:text="Clear Sky"
+                android:text="@string/sky"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,44 +82,44 @@
 
             <TextView
                 android:id="@+id/Temp_ID"
-                android:layout_width="265dp"
-                android:layout_height="117dp"
-                android:layout_marginTop="68dp"
+                android:layout_width="306dp"
+                android:layout_height="86dp"
+                android:layout_marginTop="60dp"
                 android:text="30 C"
                 android:textAlignment="center"
                 android:textSize="48sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/Desc_ID"
-                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="@+id/Desc_ID"
                 app:layout_constraintTop_toTopOf="@+id/Desc_ID" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/Hour_Recycler"
-                android:layout_width="376dp"
-                android:layout_height="206dp"
-                android:layout_marginTop="18dp"
+                android:layout_width="396dp"
+                android:layout_height="205dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.435"
+                app:layout_constraintHorizontal_bias="0.457"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Desc_ID">
+                app:layout_constraintTop_toBottomOf="@+id/currentImageId">
 
             </androidx.recyclerview.widget.RecyclerView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/Week_Recycler"
-                android:layout_width="361dp"
-                android:layout_height="397dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.391"
+                app:layout_constraintHorizontal_bias="0.528"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Hour_Recycler">
 
             </androidx.recyclerview.widget.RecyclerView>
 
             <LinearLayout
-                android:layout_width="359dp"
+                android:layout_width="match_parent"
                 android:layout_height="245dp"
                 android:layout_marginLeft="18dp"
                 android:orientation="vertical"
@@ -142,7 +144,9 @@
                             android:id="@+id/Pressure_Image_Id"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_gravity="center"
                             android:layout_weight="1"
+                            app:layout_anchorGravity="top|center"
                             app:srcCompat="@drawable/pressure" />
 
                         <TextView
@@ -150,7 +154,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/Pressure" />
+                            android:text="@string/Pressure"
+                            android:textAlignment="center" />
 
                         <TextView
                             android:id="@+id/Pressure_Id"
@@ -158,7 +163,8 @@
                             android:layout_height="wrap_content"
 
                             android:layout_weight="1"
-                            android:text="1021 hpa" />
+                            android:text="1021 hpa"
+                            android:textAlignment="center" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -171,7 +177,9 @@
                             android:id="@+id/Humidity_Image_id"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_gravity="center"
                             android:layout_weight="1"
+                            app:layout_anchorGravity="top|center"
                             app:srcCompat="@drawable/drop" />
 
                         <TextView
@@ -179,14 +187,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/Humidity" />
+                            android:text="@string/Humidity"
+                            android:textAlignment="center" />
 
                         <TextView
                             android:id="@+id/Humdidity_Id"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            android:textAlignment="center" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -199,7 +209,9 @@
                             android:id="@+id/Wind_Image_Id"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_gravity="center"
                             android:layout_weight="1.25"
+                            app:layout_anchorGravity="top|center"
                             app:srcCompat="@drawable/wind" />
 
                         <TextView
@@ -207,20 +219,22 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/Wind" />
+                            android:text="@string/Wind"
+                            android:textAlignment="center" />
 
                         <TextView
                             android:id="@+id/Wind_Id"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="23" />
+                            android:text="23"
+                            android:textAlignment="center" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="245dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -233,7 +247,9 @@
                             android:id="@+id/Cloud_Image_Id"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_gravity="center"
                             android:layout_weight="1"
+                            app:layout_anchorGravity="top|center"
                             app:srcCompat="@drawable/cloud" />
 
                         <TextView
@@ -242,6 +258,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/Cloud"
+                            android:textAlignment="center"
                             android:textSize="16sp" />
 
                         <TextView
@@ -250,6 +267,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="10 %"
+                            android:textAlignment="center"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -264,7 +282,9 @@
                             android:id="@+id/UltraViolet_Image_Id"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_gravity="center"
                             android:layout_weight="1"
+                            app:layout_anchorGravity="top|center"
                             app:srcCompat="@drawable/ultraviolt" />
 
                         <TextView
@@ -272,7 +292,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/UltraViolet" />
+                            android:text="@string/UltraViolet"
+                            android:textAlignment="center" />
 
                         <TextView
                             android:id="@+id/UltraViolet_Id"
@@ -281,6 +302,7 @@
 
                             android:layout_weight="1"
                             android:text="1021 hpa"
+                            android:textAlignment="center"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -295,7 +317,9 @@
                             android:id="@+id/Visibility_Image_Id"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_gravity="center"
                             android:layout_weight="1"
+                            app:layout_anchorGravity="top|center"
                             app:srcCompat="@drawable/visible" />
 
                         <TextView
@@ -303,7 +327,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/Visibility" />
+                            android:text="@string/Visibility"
+                            android:textAlignment="center" />
 
                         <TextView
                             android:id="@+id/Visibility_Id"
@@ -312,11 +337,26 @@
 
                             android:layout_weight="1"
                             android:text="1021 m"
+                            android:textAlignment="center"
                             android:textSize="16sp" />
                     </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/currentImageId"
+                android:layout_width="305dp"
+                android:layout_height="106dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                app:layout_anchorGravity="top|center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Temp_ID"
+                tools:srcCompat="@tools:sample/avatars" />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

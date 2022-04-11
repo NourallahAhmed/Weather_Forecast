@@ -5,13 +5,12 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
 
-    android:background="@drawable/borders"
     >
 
     <TextView
         android:id="@+id/hour_Id"
-        android:layout_width="69dp"
-        android:layout_height="28dp"
+        android:layout_width="92dp"
+        android:layout_height="30dp"
         android:layout_marginTop="28dp"
         android:text="5 AM"
         android:textAlignment="center"

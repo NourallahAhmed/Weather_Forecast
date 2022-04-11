@@ -14,14 +14,10 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.lifecycle.ViewModelProvider
-import com.example.weather.DataBase.ConcreteLocalSource
 import com.example.weather.Home.HomeView.Home_View
 import com.example.weather.Home.HomeViewModel.HomeViewModel
 import com.example.weather.Home.HomeViewModel.HomeViewModelFactory
-import com.example.weather.Network.Remote_Source
-import com.example.weather.Network.Weather_Client
-import com.example.weather.Repo.Repo
+
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.OnCompleteListener
 
@@ -127,8 +123,6 @@ class MainActivity : AppCompatActivity() {
                 })
         }
     }
-
-
 
     private val myLoctionCallBack: LocationCallback = object : LocationCallback() {
         override fun onLocationResult(locationResult: LocationResult) {
@@ -237,7 +231,7 @@ class MainActivity : AppCompatActivity() {
         radioGroup = findViewById(R.id.radioGroup)
         gps_Button = findViewById(R.id.GPS_ID)
         map_Button = findViewById(R.id.map_ID)
-        gotohomebtn=findViewById(R.id.to_home_btn)
+//        gotohomebtn=findViewById(R.id.to_home_btn)
     }
 
 
